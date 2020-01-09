@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import { Chat } from './chat.jsx'
 import Axios from 'axios';
 // import Input from '@material-ui/core/Input'
+import Search from '../components/Friends/search.jsx'
+import ShowFriends from '../components/Friends/showFriends.jsx'
+import ViewPending from '../components/Friends/viewPending.jsx'
 
 export function Home(props) {
     const [loggedIn, setLoggedIn] = useState(true)
@@ -51,8 +54,11 @@ export function Home(props) {
 
 
     return (
-        <div >
-            <Chat />
+        <div>
+            <Search />
+            <ShowFriends />
+            <ViewPending />
+            {/* <Chat /> */}
         </div>
     )
 
