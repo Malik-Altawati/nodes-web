@@ -19,7 +19,9 @@ export function Home(props) {
         'Content-Type': 'application/json',
         'authorization': `bearer ${localStorage.getItem("token")}`
     }
-
+    
+// Axios post request that has the token of the user to check if the token is vaid or not 
+    
     Axios.post('https://nodes-chat-app.herokuapp.com/auth', {}, {
         headers: headers
     })
@@ -35,7 +37,9 @@ export function Home(props) {
                 "username": username,
                 "refreshToken": localStorage.getItem("refreshToken")
             }
-
+            
+// Axios post request that has the  refresh token of the user to obtain a new token  
+            
             Axios.post('https://nodes-chat-app.herokuapp.com/refresh', data)
                 .then((response) => {
                     localStorage.setItem("token", response.token)
